@@ -1,0 +1,60 @@
+﻿@model PaymentGateway_MVC.Models.AuthorizationModel
+
+@{
+    ViewBag.Title = "AuthoirzationResult";
+}
+
+<h2>AuthoirzationResult</h2>
+
+<div>
+    <h4>AuthorizationModel</h4>
+    <hr />
+    <dl class="dl-horizontal bg-primary">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+    </dl>
+</div>
+
+<style>
+    body {
+        background-image: url('../../Image/99BJx.jpg');
+    }
+    dt {
+        border-color: black;
+        color: Black;
+        
+    }
+    dd{
+        border-color: black;
+    }
+    h2,h4{
+        color:black;
+    }
+</style>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
