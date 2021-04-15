@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using PaymentGateway_API.DAL;
@@ -13,6 +14,30 @@ namespace PaymentGateway_API.Controllers.api
         //{
         //    return Ok();
         //} //GET
+
+
+        [HttpGet]
+        public IHttpActionResult GetAllStudents()
+        {
+            IList<Customer> customers = null;
+
+            using (var ctx = new MonetaEntities())
+            {
+                customers = ctx.CustomerDetails.Select(cd => new Customer()
+                {
+                    CustomerID = cd.CustomerID,
+                    FirstName = cd.FirstName,
+                    LastName = cd.LastName
+                }).ToList<Customer>();
+            }
+
+            if (customers.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(customers);
+        }
 
 
         [HttpPost]

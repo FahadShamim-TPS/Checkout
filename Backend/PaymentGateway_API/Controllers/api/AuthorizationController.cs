@@ -1,4 +1,5 @@
 ﻿using PaymentGateway_API.DAL;
+using PaymentGateway_API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,40 @@ using System.Web.Http;
 namespace PaymentGateway_API.Controllers.api
 {
     public class AuthorizationController : ApiController
-    { 
+    {
+
+        [HttpPost]
+        [Route("api/GetAuthorizationDetails")]
+        public IHttpActionResult GetAuthorizationDetails(GetAuthorizationDetailRequest request)
+        {
+            using (var query2 = new MonetaEntities())
+            {
+                var appCall = (from app in query2.TokenDetails
+                               where app.CustomerID == request.id
+                               select app
+                               ).FirstOrDefault();
+
+                if (appCall == null)
+                {
+                    return NotFound();
+                }
+
+                var response = new
+                {
+                    appCall.CustomerID,
+                    appCall.TokenCode,
+                    appCall.TokenID,
+                    appCall.Date
+                };
+
+
+                return Json(response);
+
+            }
+        }
+  
+
+
         //post authorization
         [HttpPost]
         public IHttpActionResult Authorize(int customerId, string tokenCode, DateTime tokentime) //POST
