@@ -9,7 +9,8 @@ using System.Web.Http;
 namespace PaymentGateway_API.Controllers.api
 {
     public class AuthorizationController : ApiController
-    {
+    { 
+        //post authorization
         [HttpPost]
         public IHttpActionResult Authorize(int customerId, string tokenCode, DateTime tokentime) //POST
         {
