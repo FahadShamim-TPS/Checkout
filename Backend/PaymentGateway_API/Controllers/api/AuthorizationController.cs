@@ -1,4 +1,6 @@
-﻿using PaymentGateway_API.DAL;
+﻿using Newtonsoft.Json.Linq;
+using PaymentGateway_API.DAL;
+using PaymentGateway_API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,19 @@ using System.Web.Http;
 namespace PaymentGateway_API.Controllers.api
 {
     public class AuthorizationController : ApiController
-    { 
-        //post authorization
+    {
+
         [HttpPost]
-        public IHttpActionResult Authorize(int customerId, string tokenCode, DateTime tokentime) //POST
+        //public IHttpActionResult Authorize(int customerId, string tokenCode, DateTime tokentime) //POST
+        public IHttpActionResult Authorize([FromBody]JObject data) //POST
         {
+            DateTime d2 = DateTime.Now;
+            string _clientSideTime = d2.ToString("hh:mm tt");
+
+            int customerId = data["customerId"].ToObject<int>();
+            string tokenCode = data["tokenCode"].ToObject<string>();
+            DateTime tokentime = data["tokentime"].ToObject<DateTime>();
+
             using (var query = new MonetaEntities())
             {
                 var customer_id = query.TokenDetails
@@ -32,13 +42,12 @@ namespace PaymentGateway_API.Controllers.api
                 string _tokenCreatedTime = d1.ToString("hh:mm tt");
 
 
-                DateTime d2 = DateTime.Now;
-                string _clientSideTime = d2.ToString("hh:mm tt");
+                
 
                 DateTime tokenCreatedTime = Convert.ToDateTime(_tokenCreatedTime);
                 DateTime clientSideTime = Convert.ToDateTime(_clientSideTime);
 
-                double TimeDifference = clientSideTime.Subtract(tokenCreatedTime).TotalMinutes;
+                double TimeDifference = tokenCreatedTime.Subtract(clientSideTime).TotalMinutes;
 
 
                 if (customer_id == Convert.ToInt32(customerId) && token == Convert.ToString(tokenCode) && TimeDifference < 15)

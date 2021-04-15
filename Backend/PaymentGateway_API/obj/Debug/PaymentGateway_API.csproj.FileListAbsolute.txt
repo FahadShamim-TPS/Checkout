@@ -170,3 +170,11 @@ C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\obj\D
 C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\obj\Debug\PaymentGateway_API.csproj.CopyComplete
 C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\obj\Debug\PaymentGateway_API.dll
 C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\obj\Debug\PaymentGateway_API.pdb
+C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\fahad.shamim\Documents\GitHub\Checkout\Backend\PaymentGateway_API\bin\System.IdentityModel.Tokens.Jwt.xml
