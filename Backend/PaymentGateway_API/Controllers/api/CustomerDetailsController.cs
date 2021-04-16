@@ -17,7 +17,7 @@ namespace PaymentGateway_API.Controllers.api
 
 
         [HttpGet]
-        public IHttpActionResult GetAllStudents()
+        public IHttpActionResult GetAllCustomers()
         {
             IList<Customer> customers = null;
 

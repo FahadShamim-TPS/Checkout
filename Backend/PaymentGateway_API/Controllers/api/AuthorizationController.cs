@@ -35,8 +35,7 @@ namespace PaymentGateway_API.Controllers.api
                     appCall.TokenID,
                     appCall.Date
                 };
-
-
+                
                 return Json(response);
 
             }
