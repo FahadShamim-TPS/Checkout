@@ -12,6 +12,7 @@ namespace PaymentGateway_API.Controllers.api
 {
     public class AuthorizationController : ApiController
     {
+
         [HttpPost]
         //public IHttpActionResult Authorize(int customerId, string tokenCode, DateTime tokentime) //POST
         public IHttpActionResult Authorize([FromBody]JObject data) //POST
@@ -19,25 +20,10 @@ namespace PaymentGateway_API.Controllers.api
             DateTime d2 = DateTime.Now;
             string _clientSideTime = d2.ToString("hh:mm tt");
 
-                var response = new
-                {
-                    appCall.CustomerID,
-                    appCall.TokenCode,
-                    appCall.TokenID,
-                    appCall.Date
-                };
-                
-                return Json(response);
+            int customerId = data["customerId"].ToObject<int>();
+            string tokenCode = data["tokenCode"].ToObject<string>();
+            DateTime tokentime = data["tokentime"].ToObject<DateTime>();
 
-            }
-        }
-  
-
-
-        //post authorization
-        [HttpPost]
-        public IHttpActionResult Authorize(int customerId, string tokenCode, DateTime tokentime) //POST
-        {
             using (var query = new MonetaEntities())
             {
                 var customer_id = query.TokenDetails
