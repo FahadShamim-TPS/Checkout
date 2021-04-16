@@ -12,6 +12,30 @@ namespace PaymentGateway_API.Controllers.api
 {
     public class CustomerDetailsController : ApiController
     {
+        [HttpGet]
+        public IHttpActionResult GetAllCustomers()
+        {
+            IList<Customer> customers = null;
+            
+            using (var ctx = new MonetaEntities())
+            {
+                customers = ctx.CustomerDetails.Select(cd => new Customer()
+                {
+                    CustomerID = cd.CustomerID,
+                    FirstName = cd.FirstName,
+                    LastName = cd.LastName
+                }).ToList<Customer>();
+            }
+
+            
+            if (customers.Count == 0)
+            {
+                return NotFound();
+            }
+            
+            return Ok(customers);
+        }
+
 
         [HttpPost]
         public IHttpActionResult EnterCustomerData(Customer customer) //POST

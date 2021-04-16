@@ -47,7 +47,6 @@ namespace PaymentGateway_API.Controllers.api
 
 
         [HttpPost]
-
         //public IHttpActionResult PostDetailsForAuthentication(int customer_id, int token_id, int amount) //POST
         public IHttpActionResult PostDetailsForAuthentication([FromBody] JObject data) //POST
         {

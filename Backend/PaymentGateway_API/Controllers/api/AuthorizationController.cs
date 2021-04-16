@@ -12,7 +12,6 @@ namespace PaymentGateway_API.Controllers.api
 {
     public class AuthorizationController : ApiController
     {
-
         [HttpPost]
         //public IHttpActionResult Authorize(int customerId, string tokenCode, DateTime tokentime) //POST
         public IHttpActionResult Authorize([FromBody]JObject data) //POST
