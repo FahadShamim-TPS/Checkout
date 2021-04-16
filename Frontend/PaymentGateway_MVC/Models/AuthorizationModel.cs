@@ -9,7 +9,7 @@ namespace PaymentGateway_MVC.Models
     {
         public int CustomerId { get; set; }
         public int Amount { get; set; }
-        public TokenModel myToken { get; set; }
+        public Token myToken { get; set; }
         public DateTime date { get; set; }
 
     }

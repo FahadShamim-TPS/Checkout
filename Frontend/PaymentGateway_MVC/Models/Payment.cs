@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PaymentGateway_MVC.Models
 {
-    public class PaymentModel
+    public class Payment
     {
         public int PaymentId { get; set; }
         public int Amount { get; set; }

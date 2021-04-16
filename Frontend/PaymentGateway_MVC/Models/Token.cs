@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PaymentGateway_MVC.Models
 {
-    public class TokenModel
+    public class Token
     {
         public int TokenID { get; set; }
         public string TokenCode { get; set; }
